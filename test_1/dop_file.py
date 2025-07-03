@@ -15,3 +15,4 @@ class Calculator(deistvie):
     def otvet(self, number_1, number_2):
         result = self.summ(number_1, number_2)  # вызываем summ через self
         return result
+
