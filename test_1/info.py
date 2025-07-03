@@ -1,6 +1,6 @@
 import hashlib as hash
 import psycopg2 
-
+import os
 
 class information():
     def profile_creator(self,first_name, last_name):
@@ -12,11 +12,11 @@ class information():
         #print("Our pass: ", hash_password)
         try:
             conn = psycopg2.connect(
-                dbname = "test_data",
-                user = "postgres",
-                password = "1234",
-                host = "localhost",
-                port = "5432"
+                dbname=os.getenv("DB_NAME"),
+                user=os.getenv("DB_USER"),
+                password=os.getenv("DB_PASSWORD"),
+                host=os.getenv("DB_HOST"),
+                port=os.getenv("DB_PORT")
             )
             cur = conn.cursor()
             # Создаем таблицу, если ее еще нет
