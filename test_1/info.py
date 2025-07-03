@@ -1,7 +1,9 @@
 import hashlib as hash
 import psycopg2 
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 class information():
     def profile_creator(self,first_name, last_name):
         self.name = first_name
